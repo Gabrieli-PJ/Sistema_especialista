@@ -1,0 +1,100 @@
+Fiat Strada;94603;conforto;urbano;etanol;pequeno
+Volkswagen Passat;167910;tecnologia;urbano;elétrico;grande
+Honda Fit;124562;segurança;misto;elétrico;grande
+BMW X3;104942;conforto;estrada;etanol;pequeno
+Honda Civic Type R;68116;econômico;urbano;flex;pequeno
+BMW 320i;164849;econômico;urbano;elétrico;médio
+Ford F-150;182529;tecnologia;off-road;flex;médio
+BMW 520i;113307;conforto;off-road;gasolina;grande
+Hyundai Tucson;73202;segurança;urbano;etanol;médio
+BMW 520i;176632;econômico;misto;etanol;grande
+Ford Focus;196922;econômico;off-road;flex;grande
+Kia Seltos;109817;conforto;misto;gasolina;médio
+Honda CR-V;144609;tecnologia;misto;gasolina;médio
+Chevrolet Silverado;147342;conforto;estrada;etanol;médio
+Toyota Land Cruiser;187002;desempenho;estrada;elétrico;pequeno
+Fiat Doblo;147256;conforto;urbano;flex;médio
+Peugeot 3008;163160;segurança;misto;flex;médio
+Chevrolet Bolt EV;151788;conforto;off-road;etanol;grande
+Chevrolet Blazer;138047;tecnologia;off-road;gasolina;grande
+Nissan Kicks;131344;tecnologia;misto;etanol;grande
+Mercedes-Benz A-Class;101457;tecnologia;estrada;gasolina;pequeno
+Ford F-150;84680;segurança;urbano;elétrico;pequeno
+Chevrolet Agile;35946;desempenho;misto;etanol;grande
+Ford EcoSport;196393;econômico;off-road;gasolina;grande
+Ford Ranger;33049;econômico;urbano;etanol;médio
+Nissan Kicks;132499;conforto;off-road;elétrico;pequeno
+Peugeot 208;71638;econômico;urbano;gasolina;pequeno
+BYD Dolphin;109182;tecnologia;misto;flex;pequeno
+Volkswagen Passat;49446;tecnologia;urbano;flex;grande
+Peugeot 208;37513;desempenho;off-road;etanol;pequeno
+Jaguar F-Type;83561;desempenho;off-road;etanol;grande
+Audi Q3;45609;conforto;misto;elétrico;grande
+Peugeot 3008;181934;econômico;off-road;flex;grande
+Mitsubishi L200;55054;segurança;misto;flex;grande
+Jeep Gladiator;154345;tecnologia;off-road;gasolina;médio
+Volkswagen Passat;178337;tecnologia;estrada;gasolina;pequeno
+Ford Fiesta;158839;econômico;estrada;flex;pequeno
+Land Rover Discovery;138100;tecnologia;estrada;etanol;grande
+BMW 320i;86962;tecnologia;estrada;flex;grande
+Volkswagen Polo;177733;econômico;off-road;elétrico;grande
+Hyundai HB20;32706;conforto;misto;elétrico;grande
+Nissan Kicks;39248;desempenho;urbano;gasolina;grande
+Fiat Strada;137174;desempenho;urbano;etanol;médio
+Toyota Etios;98933;desempenho;misto;flex;pequeno
+Renault Captur;156344;econômico;misto;flex;médio
+Honda Accord;61828;desempenho;urbano;elétrico;médio
+Honda Civic Type R;60108;conforto;estrada;gasolina;grande
+Jeep Renegade;38014;tecnologia;misto;flex;médio
+Nissan Frontier;38319;segurança;urbano;etanol;grande
+BMW 330i;59662;desempenho;urbano;etanol;pequeno
+Mercedes-Benz GLB;108334;desempenho;off-road;gasolina;grande
+Ford Ka;176345;econômico;urbano;elétrico;grande
+Chevrolet Camaro;66032;desempenho;urbano;etanol;médio
+Hyundai Tucson;77202;segurança;off-road;gasolina;médio
+Kia Rio;116086;segurança;misto;flex;médio
+BMW X1;36960;tecnologia;estrada;etanol;pequeno
+Fiat 500;178691;conforto;misto;elétrico;pequeno
+Fiat Uno;197990;segurança;estrada;elétrico;pequeno
+Kia Seltos;90601;tecnologia;misto;elétrico;médio
+Toyota Corolla;188383;tecnologia;off-road;elétrico;pequeno
+Volkswagen T-Cross;122777;segurança;misto;etanol;grande
+Chevrolet Tracker;73597;desempenho;off-road;flex;pequeno
+Toyota Etios;48381;conforto;off-road;gasolina;grande
+Fiat Strada;104078;tecnologia;urbano;flex;médio
+Peugeot 208 GT;37029;conforto;urbano;gasolina;médio
+Renault Duster;74611;conforto;off-road;flex;grande
+Ford F-250;136156;conforto;misto;elétrico;grande
+Land Rover Defender;140485;desempenho;off-road;gasolina;pequeno
+Renault Kwid;131600;conforto;misto;elétrico;médio
+Toyota Fortuner;162118;tecnologia;off-road;flex;médio
+Mercedes-Benz GLA;192084;desempenho;urbano;flex;pequeno
+BMW 520i;40193;conforto;misto;etanol;grande
+Peugeot 3008;80206;segurança;off-road;etanol;grande
+Mitsubishi Pajero;106196;segurança;misto;flex;médio
+Jeep Gladiator;140248;econômico;urbano;etanol;grande
+Mazda CX-5;48834;conforto;off-road;flex;médio
+Honda Civic SI;175528;segurança;misto;gasolina;pequeno
+Nissan Leaf;102389;tecnologia;estrada;etanol;grande
+Renault Captur;143865;econômico;off-road;elétrico;pequeno
+Fiat Argo;162406;econômico;estrada;flex;grande
+Chevrolet Camaro;38389;segurança;misto;elétrico;pequeno
+Mercedes-Benz GLA;45016;econômico;off-road;flex;médio
+Honda Civic EXL;69321;desempenho;estrada;elétrico;grande
+Renault Kwid Outsider;74958;conforto;misto;etanol;grande
+Kia Seltos;47416;desempenho;off-road;etanol;pequeno
+Mitsubishi Pajero;182629;econômico;urbano;flex;grande
+BMW X5;199732;tecnologia;misto;elétrico;médio
+Chevrolet Trailblazer;152225;conforto;off-road;flex;médio
+Toyota Hilux;107677;conforto;urbano;elétrico;médio
+Mercedes-Benz GLA;153504;segurança;misto;elétrico;médio
+Chery QQ;35414;tecnologia;urbano;gasolina;médio
+Toyota Corolla;52007;segurança;estrada;etanol;médio
+Toyota RAV4;76209;desempenho;off-road;gasolina;médio
+Ford Focus;46158;conforto;estrada;elétrico;pequeno
+Volkswagen Tiguan;70022;desempenho;off-road;elétrico;pequeno
+Hyundai Creta;33163;conforto;misto;etanol;grande
+BMW X1;102937;desempenho;estrada;gasolina;grande
+Honda HR-V;165537;econômico;off-road;gasolina;médio
+Peugeot 3008;40209;tecnologia;urbano;etanol;médio
+Nissan Versa;130491;econômico;estrada;elétrico;médio
