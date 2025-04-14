@@ -9,53 +9,36 @@ import java.util.List;
 import model.Car;
 
 public class BC {
-
-    private List<Car> cars;
-    private List<Rule> rules;
+    private List<Car> cars = new ArrayList<>();
+    private List<Rule> rules = new ArrayList<>();
 
     public BC() {
-        cars = new ArrayList<>();
-        rules = new ArrayList<>();
-        carregarCarros();
-        carregarRegras();
+        carregarDados();
     }
 
-    private void carregarCarros() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("Data/Carros.txt"))) {
+    private void carregarDados() {
+        String path = "data/Carros.txt";
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String linha;
-            while ((linha = reader.readLine()) != null) {
-                String[] dadosCarro = linha.split(";");
-                if (dadosCarro.length == 6) {
-                    String nome = dadosCarro[0];
-                    int preco = Integer.parseInt(dadosCarro[1]);
-                    String prioridade = dadosCarro[2];
-                    String uso = dadosCarro[3];
-                    String combustivel = dadosCarro[4];
-                    String porte = dadosCarro[5];
-                    
-                    cars.add(new Car(nome, preco, prioridade, uso, combustivel, porte));
+            while ((linha = br.readLine()) != null) {
+                String[] partes = linha.split(";");
+                if (partes.length == 8) {
+                    int id = Integer.parseInt(partes[0].trim());
+                    String modelo = partes[1].trim();
+                    int ano = Integer.parseInt(partes[2].trim());
+                    double preco = Double.parseDouble(partes[3].trim());
+                    String combustivel = partes[4].trim();
+                    String tipo = partes[5].trim();
+                    String perfilRecomendado = partes[6].trim();
+                    String condicao = partes[7].trim();
+
+                    cars.add(new Car(id, modelo, ano, preco, combustivel, tipo, perfilRecomendado, condicao));
                 }
             }
         } catch (IOException e) {
-            System.out.println("Erro ao carregar os dados dos carros: " + e.getMessage());
+            System.err.println("Erro ao carregar os dados dos carros: " + e.getMessage());
         }
     }
-
-    private void carregarRegras() {
-        rules.add(new Rule(
-            (fact) -> fact.getPrioridade().equalsIgnoreCase("econômico") &&
-                      fact.getUso().equalsIgnoreCase("urbano"),
-            "Fiat Mobi"
-        ));
-
-        rules.add(new Rule(
-            (fact) -> fact.getPrioridade().equalsIgnoreCase("conforto") &&
-                      fact.getTamanhoFamilia() > 3,
-            "Jeep Compass"
-        ));
-
-    }
-
     public List<Car> getCars() {
         return cars;
     }

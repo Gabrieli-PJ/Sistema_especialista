@@ -1,39 +1,63 @@
 package especialista;
 
 public class Fact {
-    private String prioridade;
-    private String uso;
-    private int tamanhoFamilia;
+    private String faixaEtaria;         
+    private String estagioVida;         
+    private double orcamento;           
+    private String uso;                 
+    private int passageiros;            
+    private int bagagem;                
+    private String prioridade;          
+    private String condicaoDesejada;    
+    private int anoMinimo;
 
-    // Construtor
-    public Fact(String prioridade, String uso, int tamanhoFamilia) {
-        this.prioridade = prioridade;
+    public Fact(String faixaEtaria, String estagioVida, double orcamento, String uso,
+                int passageiros, int bagagem, String prioridade, String condicaoDesejada,
+                int anoMinimo) {
+        this.faixaEtaria = faixaEtaria;
+        this.estagioVida = estagioVida;
+        this.orcamento = orcamento;
         this.uso = uso;
-        this.tamanhoFamilia = tamanhoFamilia;
-    }
-
-    // Getters e Setters
-    public String getPrioridade() {
-        return prioridade;
-    }
-
-    public void setPrioridade(String prioridade) {
+        this.passageiros = passageiros;
+        this.bagagem = bagagem;
         this.prioridade = prioridade;
+        this.condicaoDesejada = condicaoDesejada;
+        this.anoMinimo = anoMinimo;
+    }
+
+    public String getFaixaEtaria() {
+        return faixaEtaria;
+    }
+
+    public String getEstagioVida() {
+        return estagioVida;
+    }
+
+    public double getOrcamento() {
+        return orcamento;
     }
 
     public String getUso() {
         return uso;
     }
 
-    public void setUso(String uso) {
-        this.uso = uso;
+    public int getPassageiros() {
+        return passageiros;
     }
 
-    public int getTamanhoFamilia() {
-        return tamanhoFamilia;
+    public int getBagagem() {
+        return bagagem;
     }
 
-    public void setTamanhoFamilia(int tamanhoFamilia) {
-        this.tamanhoFamilia = tamanhoFamilia;
+    public String getPrioridade() {
+        return prioridade;
+    }
+
+    public String getCondicaoDesejada() {
+        return condicaoDesejada;
+    }
+
+    public int getAnoMinimo() {
+        return anoMinimo;
     }
 }

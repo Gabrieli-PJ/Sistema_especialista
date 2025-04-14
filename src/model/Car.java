@@ -1,81 +1,60 @@
 package model;
 
 public class Car {
-    private String nome;
-    private int preco;
-    private String prioridade;
-    private String uso;
+    private int id;
+    private String modelo;
+    private int ano;
+    private double preco;
     private String combustivel;
-    private String porte;
+    private String tipo;
+    private String perfilRecomendado;
+    private String condicao; 
 
-    // Construtor
-    public Car(String nome, int preco, String prioridade, String uso, String combustivel, String porte) {
-        this.nome = nome;
+    public Car(int id, String modelo, int ano, double preco, String combustivel, String tipo, String perfilRecomendado, String condicao) {
+        this.id = id;
+        this.modelo = modelo;
+        this.ano = ano;
         this.preco = preco;
-        this.prioridade = prioridade;
-        this.uso = uso;
         this.combustivel = combustivel;
-        this.porte = porte;
+        this.tipo = tipo;
+        this.perfilRecomendado = perfilRecomendado;
+        this.condicao = condicao;
     }
 
-    // Getters e Setters
-    public String getNome() {
-        return nome;
+    public int getId() {
+        return id;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getModelo() {
+        return modelo;
     }
 
-    public int getPreco() {
+    public int getAno() {
+        return ano;
+    }
+
+    public double getPreco() {
         return preco;
-    }
-
-    public void setPreco(int preco) {
-        this.preco = preco;
-    }
-
-    public String getPrioridade() {
-        return prioridade;
-    }
-
-    public void setPrioridade(String prioridade) {
-        this.prioridade = prioridade;
-    }
-
-    public String getUso() {
-        return uso;
-    }
-
-    public void setUso(String uso) {
-        this.uso = uso;
     }
 
     public String getCombustivel() {
         return combustivel;
     }
 
-    public void setCombustivel(String combustivel) {
-        this.combustivel = combustivel;
+    public String getTipo() {
+        return tipo;
     }
 
-    public String getPorte() {
-        return porte;
+    public String getPerfilRecomendado() {
+        return perfilRecomendado;
     }
 
-    public void setPorte(String porte) {
-        this.porte = porte;
+    public String getCondicao() {
+        return condicao;
     }
 
     @Override
     public String toString() {
-        return "Car{" +
-                "nome='" + nome + '\'' +
-                ", preco=" + preco +
-                ", prioridade='" + prioridade + '\'' +
-                ", uso='" + uso + '\'' +
-                ", combustivel='" + combustivel + '\'' +
-                ", porte='" + porte + '\'' +
-                '}';
+        return modelo + " (" + ano + ") - R$" + preco;
     }
 }

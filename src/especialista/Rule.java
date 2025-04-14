@@ -1,21 +1,16 @@
 package especialista;
 
+import model.Car;
 import java.util.function.Predicate;
 
 public class Rule {
-    private Predicate<Fact> condition;
-    private String recommendation;
+    private Predicate<Car> condition;
 
-    public Rule(Predicate<Fact> condition, String recommendation) {
+    public Rule(Predicate<Car> condition) {
         this.condition = condition;
-        this.recommendation = recommendation;
     }
 
-    public boolean evaluate(Fact fact) {
-        return condition.test(fact);
-    }
-
-    public String getRecommendation() {
-        return recommendation;
+    public boolean evaluate(Car car) {
+        return condition.test(car);
     }
 }

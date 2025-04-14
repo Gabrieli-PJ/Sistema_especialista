@@ -1,44 +1,43 @@
 package ui;
 
+import model.Car;
+
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.util.List;
 
 public class Result extends JFrame {
 
-    public Result(JFrame previous, List<String> recomendacoes) {
-        setTitle("Resultado da Recomendação");
-        setSize(400, 250);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new BorderLayout());
+	private static final long serialVersionUID = 1L;
 
-        StringBuilder texto = new StringBuilder();
+	public Result(List<Car> recomendados) {
+        super("Carros Recomendados");
 
-        if (recomendacoes.isEmpty()) {
-            texto.append("Nenhum carro recomendado com base no perfil fornecido.");
+        JTextArea area = new JTextArea();
+        area.setEditable(false);
+
+        if (recomendados.isEmpty()) {
+            area.setText("Nenhum carro encontrado com base no perfil informado.");
         } else {
-            texto.append("Carros recomendados:\n");
-            for (String r : recomendacoes) {
-                texto.append("• ").append(r).append("\n");
+            StringBuilder sb = new StringBuilder();
+            for (Car c : recomendados) {
+                sb.append("ID: ").append(c.getId()).append("\n")
+                  .append("Modelo: ").append(c.getModelo()).append("\n")
+                  .append("Ano: ").append(c.getAno()).append("\n")
+                  .append("Preço: R$").append(c.getPreco()).append("\n")
+                  .append("Combustível: ").append(c.getCombustivel()).append("\n")
+                  .append("Tipo: ").append(c.getTipo()).append("\n")
+                  .append("Perfil Recomendado: ").append(c.getPerfilRecomendado()).append("\n")
+                  .append("Condição: ").append(c.getCondicao()).append("\n")
+                  .append("--------------------------\n");
             }
+            area.setText(sb.toString());
         }
 
-        JTextArea resultadoArea = new JTextArea(texto.toString());
-        resultadoArea.setEditable(false);
-        resultadoArea.setFont(new Font("Monospaced", Font.PLAIN, 14));
-        add(new JScrollPane(resultadoArea), BorderLayout.CENTER);
+        JScrollPane scroll = new JScrollPane(area);
+        add(scroll);
 
-        JButton btnFechar = new JButton("Fechar");
-        btnFechar.addActionListener((ActionEvent e) -> {
-            previous.dispose();
-            this.dispose();
-            System.exit(0);
-        });
-
-        add(btnFechar, BorderLayout.SOUTH);
-
+        setSize(600, 400);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 }

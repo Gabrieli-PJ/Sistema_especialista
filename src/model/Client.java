@@ -10,7 +10,6 @@ public class Client {
     private String porte;
     private int tamanhoFamilia;
 
-    // Construtor
     public Client(String nome, int idade, String tipoVeiculoDesejado, String prioridade, String uso, 
                   String combustivel, String porte, int tamanhoFamilia) {
         this.nome = nome;
