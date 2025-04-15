@@ -1,38 +1,34 @@
 package util;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 public class Theme {
 
-    public static void apply() {
+    /**
+     * Aplica o tema Nimbus à aplicação, garantindo uma experiência visual moderna e responsiva.
+     */
+    public static void setNimbusTheme() {
         try {
-            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-
-            UIManager.put("control", new Color(245, 245, 245));
-            UIManager.put("info", new Color(245, 245, 245));
-            UIManager.put("nimbusBase", new Color(50, 50, 50));
-            UIManager.put("nimbusAlertYellow", new Color(248, 187, 0));
-            UIManager.put("nimbusDisabledText", new Color(128, 128, 128));
-            UIManager.put("nimbusFocus", new Color(115, 164, 209));
-            UIManager.put("nimbusGreen", new Color(176, 179, 50));
-            UIManager.put("nimbusInfoBlue", new Color(66, 139, 202));
-            UIManager.put("nimbusLightBackground", new Color(245, 245, 245));
-            UIManager.put("nimbusOrange", new Color(191, 98, 4));
-            UIManager.put("nimbusRed", new Color(169, 46, 34));
-            UIManager.put("nimbusSelectedText", Color.WHITE);
-            UIManager.put("nimbusSelectionBackground", new Color(57, 105, 138));
-            UIManager.put("text", Color.DARK_GRAY);
-
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-
-        } catch (Exception e) {
-            System.out.println("Não foi possível aplicar o tema.");
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            System.err.println("Erro ao definir tema Nimbus: " + ex.getMessage());
         }
+    }
+    
+    /**
+     * Placeholder para salvar a preferência do tema.
+     * Este método pode ser expandido para registrar as preferências do usuário em um arquivo ou sistema de persistência.
+     *
+     * @param theme Nome do tema escolhido pelo usuário
+     */
+    public static void saveThemePreference(String theme) {
+        // Exemplo de log para simulação de salvamento da preferência
+        System.out.println("Tema '" + theme + "' salvo com sucesso!");
     }
 }

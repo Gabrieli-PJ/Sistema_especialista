@@ -1,8 +1,9 @@
 package ui;
 
+import model.Client;
 import especialista.Fact;
-import especialista.Motor;
 import especialista.BC;
+import especialista.Motor;
 import model.Car;
 
 import javax.swing.*;
@@ -10,79 +11,73 @@ import java.awt.*;
 import java.util.List;
 
 public class ClientForm extends JFrame {
-
-	private static final long serialVersionUID = 1L;
-	private JTextField orcamentoField, passageirosField, bagagemField, anoMinField;
-    private JComboBox<String> faixaEtariaBox, estagioVidaBox, usoBox, prioridadeBox, condicaoBox;
+    private static final long serialVersionUID = 1L;
+	private JTextField orcamentoField;
+    private JTextField anoMinField;
+    private JComboBox<String> prioridadeBox, usoBox, tipoBox, combustivelBox, condicaoBox;
 
     public ClientForm() {
-        super("Perfil do Cliente");
+        setTitle("Cadastro do Cliente");
+        setSize(400, 400);
+        setLocationRelativeTo(null);
+        setLayout(new GridLayout(0, 2));
 
-        setLayout(new GridLayout(10, 2, 5, 5));
-
-        faixaEtariaBox = new JComboBox<>(new String[]{"Jovem", "Adulto", "Idoso"});
-        estagioVidaBox = new JComboBox<>(new String[]{"Solteiro", "Casado", "Com filhos"});
-        usoBox = new JComboBox<>(new String[]{"Urbano", "Rodoviário", "Off-road", "Esportivo"});
-        prioridadeBox = new JComboBox<>(new String[]{"Econômico", "Desempenho", "Tecnologia", "Conforto"});
-        condicaoBox = new JComboBox<>(new String[]{"Novo", "Usado"});
-
+        // Campos do formulário
+        add(new JLabel("Orçamento (R$):"));
         orcamentoField = new JTextField();
-        passageirosField = new JTextField();
-        bagagemField = new JTextField();
-        anoMinField = new JTextField();
-
-        add(new JLabel("Faixa Etária:"));
-        add(faixaEtariaBox);
-        add(new JLabel("Estágio de Vida:"));
-        add(estagioVidaBox);
-        add(new JLabel("Orçamento Disponível:"));
         add(orcamentoField);
-        add(new JLabel("Tipo de Uso:"));
-        add(usoBox);
-        add(new JLabel("Passageiros:"));
-        add(passageirosField);
-        add(new JLabel("Bagagem (1-5):"));
-        add(bagagemField);
-        add(new JLabel("Prioridade:"));
-        add(prioridadeBox);
-        add(new JLabel("Condição:"));
-        add(condicaoBox);
-        add(new JLabel("Ano Mínimo:"));
+
+        add(new JLabel("Ano mínimo do carro:"));
+        anoMinField = new JTextField();
         add(anoMinField);
 
-        JButton enviar = new JButton("Obter Recomendação");
-        enviar.addActionListener(e -> processar());
+        add(new JLabel("Prioridade:"));
+        prioridadeBox = new JComboBox<>(new String[]{"Econômico", "Familiar", "Desportivo", "Versátil"});
+        add(prioridadeBox);
 
-        add(new JLabel());
+        add(new JLabel("Tipo de uso:"));
+        usoBox = new JComboBox<>(new String[]{"Urbano", "Rodoviário", "Off-road"});
+        add(usoBox);
+
+        add(new JLabel("Combustível:"));
+        combustivelBox = new JComboBox<>(new String[]{"Flex", "Gasolina", "Diesel", "Elétrico"});
+        add(combustivelBox);
+
+        add(new JLabel("Condição do carro:"));
+        condicaoBox = new JComboBox<>(new String[]{"Novo", "Usado"});
+        add(condicaoBox);
+
+        JButton enviar = new JButton("Buscar Carros");
+        enviar.addActionListener(e -> processar());
         add(enviar);
 
-        setSize(450, 450);
-        setLocationRelativeTo(null);
         setVisible(true);
     }
 
     private void processar() {
         try {
-            String faixaEtaria = faixaEtariaBox.getSelectedItem().toString();
-            String estagioVida = estagioVidaBox.getSelectedItem().toString();
             double orcamento = Double.parseDouble(orcamentoField.getText());
-            String uso = usoBox.getSelectedItem().toString();
-            int passageiros = Integer.parseInt(passageirosField.getText());
-            int bagagem = Integer.parseInt(bagagemField.getText());
-            String prioridade = prioridadeBox.getSelectedItem().toString();
-            String condicao = condicaoBox.getSelectedItem().toString();
-            int anoMinimo = Integer.parseInt(anoMinField.getText());
+            int anoMin = Integer.parseInt(anoMinField.getText());
 
-            Fact fato = new Fact(faixaEtaria, estagioVida, orcamento, uso,
-                                 passageiros, bagagem, prioridade, condicao, anoMinimo);
-            Motor motor = new Motor(new BC());
-            List<Car> recomendados = motor.recomendar(fato);
+            // Atualização na criação do cliente
+            Client client = new Client(
+                (String) prioridadeBox.getSelectedItem(),
+                (String) usoBox.getSelectedItem(),
+                (String) combustivelBox.getSelectedItem(),
+                "",
+                orcamento,
+                anoMin,
+                (String) condicaoBox.getSelectedItem()
+            );
+
+            Fact fact = new Fact(client);
+            List<Car> carros = new Motor().recomendar(fact, BC.carregarCarros());
 
             dispose();
-            new Result(recomendados);
+            new Result(carros);
 
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos corretamente.");
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Digite valores válidos para orçamento e ano.");
         }
     }
 }

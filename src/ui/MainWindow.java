@@ -4,25 +4,24 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainWindow extends JFrame {
+    public MainWindow() {
+        setTitle("AutoAtendimento - Concessionária Benjamin");
+        setSize(400, 200);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setLayout(new BorderLayout());
 
-	private static final long serialVersionUID = 1L;
-
-	public MainWindow() {
-        super("Concessionária Benjamin - Sistema Especialista");
-
-        JButton iniciarButton = new JButton("Iniciar Autoatendimento");
+        JLabel title = new JLabel("Bem-vindo à Concessionária Benjamin", SwingConstants.CENTER);
+        JButton iniciarButton = new JButton("Iniciar Atendimento");
 
         iniciarButton.addActionListener(e -> {
             dispose();
             new ClientForm();
         });
 
-        setLayout(new FlowLayout());
-        add(iniciarButton);
+        add(title, BorderLayout.CENTER);
+        add(iniciarButton, BorderLayout.SOUTH);
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 120);
-        setLocationRelativeTo(null);
         setVisible(true);
     }
 }

@@ -1,52 +1,27 @@
 package model;
 
 public class Client {
-    private String nome;
-    private int idade;
-    private String tipoVeiculoDesejado;
     private String prioridade;
     private String uso;
     private String combustivel;
     private String porte;
-    private int tamanhoFamilia;
+    private double orcamento;
+    private int anoMinimo;
+    private String condicao;
 
-    public Client(String nome, int idade, String tipoVeiculoDesejado, String prioridade, String uso, 
-                  String combustivel, String porte, int tamanhoFamilia) {
-        this.nome = nome;
-        this.idade = idade;
-        this.tipoVeiculoDesejado = tipoVeiculoDesejado;
+    // Novo construtor
+    public Client(String prioridade, String uso,
+                  String combustivel, String porte, double orcamento, int anoMinimo, String condicao) {
         this.prioridade = prioridade;
         this.uso = uso;
         this.combustivel = combustivel;
         this.porte = porte;
-        this.tamanhoFamilia = tamanhoFamilia;
+        this.orcamento = orcamento;
+        this.anoMinimo = anoMinimo;
+        this.condicao = condicao;
     }
 
     // Getters e Setters
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public String getTipoVeiculoDesejado() {
-        return tipoVeiculoDesejado;
-    }
-
-    public void setTipoVeiculoDesejado(String tipoVeiculoDesejado) {
-        this.tipoVeiculoDesejado = tipoVeiculoDesejado;
-    }
-
     public String getPrioridade() {
         return prioridade;
     }
@@ -79,25 +54,40 @@ public class Client {
         this.porte = porte;
     }
 
-    public int getTamanhoFamilia() {
-        return tamanhoFamilia;
+    public double getOrcamento() {
+        return orcamento;
     }
 
-    public void setTamanhoFamilia(int tamanhoFamilia) {
-        this.tamanhoFamilia = tamanhoFamilia;
+    public void setOrcamento(double orcamento) {
+        this.orcamento = orcamento;
+    }
+
+    public int getAnoMinimo() {
+        return anoMinimo;
+    }
+
+    public void setAnoMinimo(int anoMinimo) {
+        this.anoMinimo = anoMinimo;
+    }
+
+    public String getCondicao() {
+        return condicao;
+    }
+
+    public void setCondicao(String condicao) {
+        this.condicao = condicao;
     }
 
     @Override
     public String toString() {
         return "Client{" +
-                "nome='" + nome + '\'' +
-                ", idade=" + idade +
-                ", tipoVeiculoDesejado='" + tipoVeiculoDesejado + '\'' +
                 ", prioridade='" + prioridade + '\'' +
                 ", uso='" + uso + '\'' +
                 ", combustivel='" + combustivel + '\'' +
                 ", porte='" + porte + '\'' +
-                ", tamanhoFamilia=" + tamanhoFamilia +
+                ", orcamento=" + orcamento +
+                ", anoMinimo=" + anoMinimo +
+                ", condicao='" + condicao + '\'' +
                 '}';
     }
 }

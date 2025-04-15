@@ -1,49 +1,41 @@
 package especialista;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import model.Car;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Car;
-
 public class BC {
-    private List<Car> cars = new ArrayList<>();
-    private List<Rule> rules = new ArrayList<>();
+    // Método para carregar os carros do arquivo Carros.txt
+    public static List<Car> carregarCarros() {
+        List<Car> carros = new ArrayList<>();
+        String fileName = "Data/Carros.txt";  // Caminho do arquivo de carros
 
-    public BC() {
-        carregarDados();
-    }
-
-    private void carregarDados() {
-        String path = "data/Carros.txt";
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String linha;
             while ((linha = br.readLine()) != null) {
-                String[] partes = linha.split(";");
-                if (partes.length == 8) {
-                    int id = Integer.parseInt(partes[0].trim());
-                    String modelo = partes[1].trim();
-                    int ano = Integer.parseInt(partes[2].trim());
-                    double preco = Double.parseDouble(partes[3].trim());
-                    String combustivel = partes[4].trim();
-                    String tipo = partes[5].trim();
-                    String perfilRecomendado = partes[6].trim();
-                    String condicao = partes[7].trim();
+                // Dividindo os dados da linha por ";"
+                String[] dados = linha.split(";");
 
-                    cars.add(new Car(id, modelo, ano, preco, combustivel, tipo, perfilRecomendado, condicao));
-                }
+                // Criando o objeto Car a partir dos dados
+                int id = Integer.parseInt(dados[0].trim());
+                String modelo = dados[1].trim();
+                int ano = Integer.parseInt(dados[2].trim());
+                double preco = Double.parseDouble(dados[3].trim());
+                String combustivel = dados[4].trim();
+                String tipo = dados[5].trim();
+                String perfilRecomendado = dados[6].trim();
+                String condicao = dados[7].trim();
+
+                // Adicionando o carro à lista
+                Car carro = new Car(id, modelo, ano, preco, combustivel, tipo, perfilRecomendado, condicao);
+                carros.add(carro);
             }
         } catch (IOException e) {
-            System.err.println("Erro ao carregar os dados dos carros: " + e.getMessage());
+            e.printStackTrace();
         }
-    }
-    public List<Car> getCars() {
-        return cars;
-    }
 
-    public List<Rule> getRules() {
-        return rules;
+        return carros;
     }
 }

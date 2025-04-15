@@ -2,13 +2,13 @@ package app;
 
 import javax.swing.SwingUtilities;
 import ui.MainWindow;
-import util.Theme;
 
 public class Main {
     public static void main(String[] args) {
+        // Execução na thread da UI para evitar race conditions e garantir responsividade
         SwingUtilities.invokeLater(() -> {
-            Theme.apply();
-            new MainWindow();
+            MainWindow window = new MainWindow();
+            window.setVisible(true);
         });
     }
 }
